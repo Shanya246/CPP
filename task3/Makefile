@@ -30,15 +30,21 @@ STR = -lstring
 
 CONF = ldconfig
 
-all: run 
+all: create 
 
-run: run1
-	$(CC) main.cpp $(L) $(STR) $(OUT) main 
+create: 
+	$(CC) string11.cpp $(PIC) $(SHARED) $(OUT) libstring.so
 
-run1:
-	./main
+install:h config 
+	$(SU) cp libstring.so /usr/lib/
+
+h:
+	$(SU) cp string11.h /usr/include
+
+
+config: 
+	$(SU) $(CONF)
 
 clean:
 	rm *.o *.h *.cpp
-
 

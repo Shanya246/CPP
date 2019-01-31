@@ -1,0 +1,43 @@
+CC=g++
+
+CFLAGs = -c -Wall
+
+OUT= -o
+
+EXENAME = runner
+
+MF = mv
+
+CP = cp
+
+MD = mkdir -p
+
+CPPDIR = SOURCE
+
+HDIR = H
+
+ODIR = BIN
+
+SHARED = -shared
+
+SU = sudo
+
+PIC = -fPIC
+
+L= -L.
+
+STR = -lstringclass
+
+CONF = ldconfig
+
+all: compile run
+
+compile: 
+        $(CC) Stringmain.cpp $(L) $(STR) $(OUT) Stringmain 
+
+run:
+        ./Stringmain
+
+clean:
+        rm *.o *.h *.cpp
+
